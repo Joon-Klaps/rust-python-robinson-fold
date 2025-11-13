@@ -1,0 +1,12 @@
+[package]
+name = "rust-python-tree-distances"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+phylotree="0.1.3"
+pyo3 = { version = "0.21", features = ["extension-module"] }
+rayon = "1"
