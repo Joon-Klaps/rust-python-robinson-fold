@@ -4,20 +4,22 @@ Compute pairwise tree distances (Robinson–Foulds, weighted RF, Kuhner–Felsen
 
 ## Install / Build
 
-> [!INFO]
-> Install rust toolchain from https://rustup.rs/ if you don't have it yet.
+Requirements: Rust toolchain (stable). Then build the binary:
 
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+> [!NOTE]
+> Install the Rust toolchain from https://rustup.rs/ if you don't have it yet.
+>
+> ```bash
+> curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+> ```
+>
 
 Clone the repository:
 ```bash
 git clone https://github.com/Joon-Klaps/rust-python-tree-distances.git
 ```
 
-Requirements: Rust toolchain (stable). Then build the binary:
-
+Build the project:
 ```bash
 cd rust-python-tree-distances
 cargo build --release
