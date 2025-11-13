@@ -39,7 +39,7 @@ pub fn read_beast_trees<P: AsRef<Path>>(
         // Filter out burn-in trees based on count and/or state number if 0 we don't filter
         .filter(|(idx, _tree, state, _name)| {
                 (burnin_trees == 0 && burnin_states == 0) ||
-                (burnin_trees > 0 && *idx > burnin_trees) ||
+                (burnin_trees > 0 && *idx >= burnin_trees) ||
                 (burnin_states > 0 && *state > burnin_states)
         })
 

@@ -41,8 +41,8 @@ rust-python-tree-distances \
   [-q|--quiet]
 ```
 
->[!NOTE]
-> Something might be of with kf distance metric, it didn't pass testing where we compared the parallell implementation vs the single-threaded one.
+>[!WARNING]
+> kf & weighted distance metric do not yet work as expected.
 
 Flags and options:
 
@@ -65,28 +65,29 @@ rust-python-tree-distances \
   -i tests/data/hiv1.trees \
   -o out/hiv1_rf.tsv.gz \
   --metric rf
-```
 
-- Compute weighted RF matrix using real taxon labels and print to stdout:
-
-```bash
-rust-python-tree-distances \
-  -i tests/data/hiv1.trees \
-  -o - \
-  --use-real-taxa \
-  --metric weighted \
-  -q | head
+# Reading in beast 0.003s
+# Read in 162 taxons for 21 trees
+# Creating tree bit snapshots 0.002s
+# Determining distances using RF for 210 combinations
+# Determining distances using RF 0.000s
+# Writing to output 0.000s
 ```
 
 - Apply burn-in by tree count and state:
 
 ```bash
-rust-python-tree-distances \
+rust-python-tree-distances \                                                                                                      2 ↵
   -i tests/data/hiv1.trees \
-  -o out/hiv1_kf.tsv \
-  -t 100 \
-  -s 300000 \
-  --metric kf
+  -o out/hiv1_rf.tsv \
+  -t 2 \
+
+# Reading in beast 0.003s
+# Read in 162 taxons for 19 trees
+# Creating tree bit snapshots 0.001s
+# Determining distances using RF for 171 combinations
+# Determining distances using RF 0.000s
+# Writing to output 0.000s
 ```
 
 ## Performance notes
