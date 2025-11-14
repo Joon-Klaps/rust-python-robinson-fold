@@ -20,6 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        lfs: true
 
     - name: Setup Rust
       uses: dtolnay/rust-toolchain@stable
@@ -69,6 +71,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        lfs: true
 
     - name: Setup Python
       uses: actions/setup-python@v5
